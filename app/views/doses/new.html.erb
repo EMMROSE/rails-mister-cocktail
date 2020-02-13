@@ -1,0 +1,6 @@
+<h1>add a new dose</h1>
+
+<%= simple_form_for @dose, url: cocktail_path(params[:cocktail_id]) do |f| %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>

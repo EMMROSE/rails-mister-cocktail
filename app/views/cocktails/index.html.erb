@@ -1,0 +1,10 @@
+<div class="home-banner">
+<h1><strong>Dark Radish Cocktails</strong> <em>(established in 1986)</em></h1><br>
+
+
+<%= link_to "Create a new cocktail", new_cocktail_path, class: "btn btn-gradient" %><br>
+</div>
+
+<% @cocktails.each do |cocktail| %>
+    <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+<% end %>
