@@ -1,7 +1,13 @@
-<h2><%= @cocktail.name %></h2>
-<% @cocktail.dose.each do |dose|%>
-  <p><%= dose.description %></p>
+<h1><%= @cocktail.name %></h1>
+<%= link_to "Back to all cocktails", root_path %><br>
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+
+<h3>Recipe</h3>
+<% @cocktail.doses.each do |dose| %>
+    <p><%= dose.ingredient.name %></p>
+    <p><%= dose.description %></p>
+    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash destroy_dose"></i>
+    <% end %>
 <% end %>
 
-<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-gradient" %>
-<%= link_to "Back to cocktails list", cocktails_path, class: "btn btn-gradient" %>
