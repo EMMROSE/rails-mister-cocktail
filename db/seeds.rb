@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 Ingredient.destroy_all
 Cocktail.destroy_all
 Ingredient.create(name: "lemon")

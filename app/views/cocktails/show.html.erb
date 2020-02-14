@@ -1,4 +1,5 @@
 <h1><%= @cocktail.name %></h1>
+<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
 <%= link_to "Back to all cocktails", root_path %><br>
 <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
 
